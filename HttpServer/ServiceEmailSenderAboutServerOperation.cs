@@ -67,10 +67,9 @@ namespace HttpServer
                 );
 
                 if (result.Outcome == OutcomeType.Failure)
-                {
                     _logger.LogError(result.FinalException, "При отправке сообщение по адресу {email} произошла ошибка!", email);
-                }
-                _logger.LogInformation("Cообщение по адресу {email} Успешно отправлено.", email);
+                else
+                    _logger.LogInformation("Cообщение по адресу {email} Успешно отправлено.", email);
             }
         }
     }
